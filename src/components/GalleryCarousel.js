@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { Carousel,
          CarouselItem,
@@ -7,17 +7,12 @@ import { Carousel,
          CarouselCaption 
         } from 'reactstrap'
 
+import { galleryPhotos } from '../images/galleryPhotos'
+
 const GalleryCarousel = () => {
-    const [galleryPictures, setGalleryPictures] = useState({})
+    const [galleryPictures, setGalleryPictures] = useState(galleryPhotos)
     const [activeIndex, setActiveIndex] = useState(0)
     const [animating, setAnimating] = useState(false)
-
-    useEffect(() => {
-        axios
-            .get('https://res.cloudinary.com/dwxkvhdoj/image/upload/v1591336291/elisabethArtistry/')
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-    }, [])
 
     return (
         <div></div>
