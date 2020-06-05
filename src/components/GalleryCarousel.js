@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { Carousel,
          CarouselItem,
          CarouselControl,
@@ -10,13 +9,52 @@ import { Carousel,
 import { galleryPhotos } from '../images/galleryPhotos'
 
 const GalleryCarousel = () => {
-    const [galleryPictures, setGalleryPictures] = useState(galleryPhotos)
+    // const [galleryPictures, setGalleryPictures] = useState(galleryPhotos)
     const [activeIndex, setActiveIndex] = useState(0)
     const [animating, setAnimating] = useState(false)
 
-    return (
-        <div></div>
-    )
+    const next = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === galleryPhotos.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+      }
+    
+      const previous = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === 0 ? galleryPhotos.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+      }
+    
+      const goToIndex = (newIndex) => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+      }
+    
+      const slides = galleryPhotos.map((item) => {
+        return (
+          <CarouselItem
+            onExiting={() => setAnimating(true)}
+            onExited={() => setAnimating(false)}
+            key={item.image}
+          >
+            <img src={item.image} alt={item.name} />
+            <CarouselCaption captionText={item.name} captionHeader={item.category} />
+          </CarouselItem>
+        );
+      });
+    
+      return (
+        <Carousel
+          activeIndex={activeIndex}
+          next={next}
+          previous={previous}
+        >
+          <CarouselIndicators items={galleryPhotos} activeIndex={activeIndex} onClickHandler={goToIndex} />
+          {slides}
+          <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+          <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+        </Carousel>
+      );
 }
 
 export default GalleryCarousel
