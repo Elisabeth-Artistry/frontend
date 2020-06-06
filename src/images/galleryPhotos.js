@@ -42,7 +42,7 @@ export const galleryPhotos = [
     {
         image: "https://res.cloudinary.com/dwxkvhdoj/image/upload/v1591336262/elisabethArtistry/20200216_110206_uuauud.jpg",
         category: "Crochet Cuddlies",
-        name: "Small Sea Turtle"
+        name: "Medium Sea Turtle"
     },
     {
         image: "https://res.cloudinary.com/dwxkvhdoj/image/upload/v1591336261/elisabethArtistry/20191223_235220_bqqogk.jpg",
