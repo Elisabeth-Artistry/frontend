@@ -4,14 +4,14 @@ import {loadStripe} from '@stripe/stripe-js'
 
 import CheckoutForm from './CheckoutForm'
 
-const stripePromise = loadStripe()
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY)
 
 const Payment = () => {
 
     return(
-        <div>
-
-        </div>
+        <Elements stripe={stripePromise} >
+            <CheckoutForm />
+        </Elements >
     )
 }
 
