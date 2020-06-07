@@ -4,6 +4,8 @@ import {loadStripe} from '@stripe/stripe-js'
 
 import CheckoutForm from './CheckoutForm'
 
+const stripePromise = loadStripe()
+
 const Payment = () => {
 
     return(
