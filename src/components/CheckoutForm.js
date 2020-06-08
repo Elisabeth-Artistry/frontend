@@ -10,11 +10,12 @@ export default function CheckoutForm() {
   const [client_secret, set_client_secret] = useState('')
 
   useEffect(() => {
-    axios.get('https://cors-anywhere.herokuapp.com/https://elisabeth-artistry-be.herokuapp.com/api/orders/secret')
+    axios.get('https://elisabeth-artistry-be.herokuapp.com/api/orders/secret')
         .then(res => {
-            set_client_secret(res.data.client_secret)
+          console.log(res.data.client_secret)
+          set_client_secret(res.data.client_secret)
         })
-  })
+  }, [])
 
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
