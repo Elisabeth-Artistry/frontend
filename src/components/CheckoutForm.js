@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 
 import CardSection from './CardSection';
@@ -6,6 +7,14 @@ import CardSection from './CardSection';
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
+  const [client_secret, set_client_secret] = useState('')
+
+  useEffect(() => {
+    axios.get('https://cors-anywhere.herokuapp.com/https://elisabeth-artistry-be.herokuapp.com/api/orders/secret')
+        .then(res => {
+            set_client_secret(res.data.client_secret)
+        })
+  })
 
   const handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
@@ -18,7 +27,7 @@ export default function CheckoutForm() {
       return;
     }
 
-    const result = await stripe.confirmCardPayment('{CLIENT_SECRET}', {
+    const result = await stripe.confirmCardPayment(`${client_secret}`, {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
@@ -43,7 +52,7 @@ export default function CheckoutForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="payment">
       <CardSection />
       <button disabled={!stripe}>Confirm order</button>
     </form>
