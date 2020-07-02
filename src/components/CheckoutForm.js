@@ -12,7 +12,6 @@ export default function CheckoutForm() {
   useEffect(() => {
     axios.get('https://elisabeth-artistry-be.herokuapp.com/api/orders/secret')
         .then(res => {
-          console.log(res.data.client_secret)
           set_client_secret(res.data.client_secret)
         })
   }, [])
