@@ -3,6 +3,8 @@ import { Route } from 'react-router'
 import {Elements} from '@stripe/react-stripe-js'
 import {loadStripe} from '@stripe/stripe-js'
 
+import './scss/global.scss'
+
 import Header from './components/Header'
 import GalleryCarousel from './components/GalleryCarousel'
 import CheckoutForm from './components/CheckoutForm'

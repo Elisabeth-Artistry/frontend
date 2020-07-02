@@ -6,6 +6,8 @@ import { Carousel,
          CarouselCaption 
         } from 'reactstrap'
 
+import '../scss/carousel.scss'
+
 import { galleryPhotos } from '../images/galleryPhotos'
 
 const GalleryCarousel = () => {
