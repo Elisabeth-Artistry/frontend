@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import '../../scss/patternList.scss'
+
 import PatternCard from './PatternCard'
 
 const PatternList = () => {
