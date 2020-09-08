@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../../scss/patternCard.scss'
+
 const PatternCard = ({ pattern }) => {
 
     return (
