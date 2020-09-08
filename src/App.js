@@ -9,6 +9,7 @@ import Header from './components/Header'
 import GalleryCarousel from './components/GalleryCarousel'
 import CheckoutForm from './components/CheckoutForm'
 import PatternList from './components/patterns/PatternList'
+import PatternPage from './components/patterns/PatternPage'
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY)
 
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/' component={GalleryCarousel} />
         <Route path='/payment' component={CheckoutForm} />
         <Route path='/patterns' component={PatternList} />
+        <Route path='/pattern/:id' component={PatternPage} />
       </div>
     </Elements>
   );
