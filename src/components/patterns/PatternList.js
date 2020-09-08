@@ -10,7 +10,7 @@ const PatternList = () => {
         axios
             .get("http://localhost:5000/api/patterns")
             .then(res => {
-                console.log(res.data)
+                setPatterns(res.data)
             })
             .catch(err => console.log(err))
     }, [])
