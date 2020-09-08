@@ -17,7 +17,9 @@ const PatternList = () => {
 
     return (
         <div>
-            {patterns.map(pattern => <PatternCard pattern={pattern} />)}
+            {patterns.map(pattern => 
+                <PatternCard key={pattern.id} pattern={pattern} />
+            )}
         </div>
     )
 }
