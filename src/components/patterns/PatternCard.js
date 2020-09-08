@@ -5,6 +5,8 @@ const PatternCard = ({ pattern }) => {
     return (
         <div>
             <h3>{pattern.name}</h3>
+            <img src={pattern.image_url} alt={pattern.name} />
+            <p>{pattern.description}</p>
         </div>
     )
 }
