@@ -27,8 +27,8 @@ const PatternPage = () => {
                 <h2>{pattern.name}</h2>
                 <p>{pattern.description}</p>
                 <p>{pattern.price}</p>
-                <BuyNow />
-                <AddToCart />
+                <BuyNow pattern={pattern} />
+                <AddToCart pattern={pattern} />
             </span>
             <span className="patternPageRight">
                 <img src={pattern.image_url} alt={pattern.name} />
