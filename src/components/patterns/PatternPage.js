@@ -4,6 +4,9 @@ import axios from 'axios'
 
 import '../../scss/patternPage.scss'
 
+import AddToCart from '../buttons/AddToCart'
+import BuyNow from '../buttons/BuyNow'
+
 const PatternPage = () => {
     const { id } = useParams()
     const [pattern, setPattern] = useState({})
@@ -24,6 +27,8 @@ const PatternPage = () => {
                 <h2>{pattern.name}</h2>
                 <p>{pattern.description}</p>
                 <p>{pattern.price}</p>
+                <BuyNow />
+                <AddToCart />
             </span>
             <span className="patternPageRight">
                 <img src={pattern.image_url} alt={pattern.name} />
