@@ -1,0 +1,19 @@
+.cartIcon {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 30px;
+    }
+}
+
+.itemLength {
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

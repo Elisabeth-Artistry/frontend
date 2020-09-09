@@ -1,15 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import '../scss/cartIcon.scss'
 import cart from '../images/cart.png'
 
 const CartIcon = () => {
     const items = useSelector(state => state.cartReducer.length)
 
     return (
-        <span>
+        <span className="cartIcon">
             <img src={cart} alt="cart" />
-            <div>{items}</div>
+            <div className="itemLength">{items}</div>
         </span>
     )
 }
