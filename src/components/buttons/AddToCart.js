@@ -1,9 +1,11 @@
 import React from 'react'
 
-const AddToCart = () => {
+import { addPattern } from '../../actions/cart'
+
+const AddToCart = ({ pattern }) => {
 
     return (
-        <button>Add to Cart</button>
+        <button onClick={() => addPattern(pattern)}>Add to Cart</button>
     )
 }
 
