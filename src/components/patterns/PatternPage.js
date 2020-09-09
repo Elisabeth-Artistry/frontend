@@ -20,10 +20,14 @@ const PatternPage = () => {
 
     return (
         <div className="patternPage">
-            <h2>{pattern.name}</h2>
-            <img src={pattern.image_url} alt={pattern.name} />
-            <p>{pattern.description}</p>
-            <p>{pattern.price}</p>
+            <span className="patternPageLeft">
+                <h2>{pattern.name}</h2>
+                <p>{pattern.description}</p>
+                <p>{pattern.price}</p>
+            </span>
+            <span className="patternPageRight">
+                <img src={pattern.image_url} alt={pattern.name} />
+            </span>
         </div>
     )
 }
