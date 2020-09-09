@@ -1,0 +1,13 @@
+.patternPage{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        width: 50%;
+    }
+}
