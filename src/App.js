@@ -6,6 +6,7 @@ import {loadStripe} from '@stripe/stripe-js'
 import './scss/global.scss'
 
 import Header from './components/Header'
+import Navbar from './components/Navbar'
 import GalleryCarousel from './components/GalleryCarousel'
 import CheckoutForm from './components/CheckoutForm'
 import PatternList from './components/patterns/PatternList'
@@ -18,6 +19,7 @@ function App() {
     <Elements stripe={stripePromise}>
       <div className="app">
         <Header />
+        <Navbar />
 
         <Route exact path='/' component={GalleryCarousel} />
         <Route path='/payment' component={CheckoutForm} />
