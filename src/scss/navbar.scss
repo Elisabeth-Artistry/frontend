@@ -1,0 +1,19 @@
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgrey;
+}
+
+a {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    background-color: lightblue;
+}

@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Navbar />
 
-        <Route exact path='/' component={GalleryCarousel} />
+        <Route exact path='/gallery' component={GalleryCarousel} />
         <Route path='/payment' component={CheckoutForm} />
         <Route path='/patterns' component={PatternList} />
         <Route path='/pattern/:id' component={PatternPage} />
