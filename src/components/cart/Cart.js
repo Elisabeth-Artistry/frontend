@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import CartItem from './CartItem'
 
 const Cart = () => {
-    const cartItems = useSelector(state => state.cartReducer)
+    const cartItems = useSelector(state => state.cartReducer.items)
 
     return (
         <div>
