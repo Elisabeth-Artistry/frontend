@@ -1,12 +1,19 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 import '../scss/header.scss'
+
 import icon from '../images/icon.png'
-import cart from '../images/cart.png'
 import CartIcon from './cart/CartIcon'
 
 const Header = () => {
+    const location = useLocation()
+    console.log(location)
 
+    if(location.pathname === '/checkout'){
+        return null
+    }
+    
     return (
         <header>
             <img src={icon} />
