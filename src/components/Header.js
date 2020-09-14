@@ -8,12 +8,11 @@ import CartIcon from './cart/CartIcon'
 
 const Header = () => {
     const location = useLocation()
-    console.log(location)
 
     if(location.pathname === '/checkout'){
         return null
     }
-    
+
     return (
         <header>
             <img src={icon} />
