@@ -9,7 +9,6 @@ import './scss/global.scss'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import GalleryCarousel from './components/GalleryCarousel'
-import CheckoutForm from './components/CheckoutForm'
 import PatternList from './components/patterns/PatternList'
 import PatternPage from './components/patterns/PatternPage'
 import CartPage from './components/cart/CartPage'
@@ -26,7 +25,6 @@ function App() {
         <Navbar />
 
         <Route exact path='/gallery' component={GalleryCarousel} />
-        <Route path='/payment' component={CheckoutForm} />
         <Route path='/patterns' component={PatternList} />
         <Route path='/pattern/:id' component={PatternPage} />
         <Route path='/cart' component={CartPage} />
