@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 
-import CardSection from './CardSection';
+import CardSection from '../CardSection';
 
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -10,7 +10,7 @@ export default function CheckoutForm() {
   const [client_secret, set_client_secret] = useState('')
 
   useEffect(() => {
-    axios.get('https://elisabeth-artistry-be.herokuapp.com/api/orders/secret')
+    axios.post('https://elisabeth-artistry-be.herokuapp.com/api/orders/secret', {})
         .then(res => {
           set_client_secret(res.data.client_secret)
         })

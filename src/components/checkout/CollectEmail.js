@@ -10,15 +10,17 @@ const CollectEmail = () => {
 
     return (
         <form onSubmit={handleSubmit(setEmail)}>
-            <lable>Email
+            <label>Email
                 <input
+                    type='email'
                     name='email'
                     ref={register({ required: true })}
                 />
-                {errors.email && <p>We need your email to send you the pattern.</p>}
-            </lable>
+                {errors.email && <p>Enter your email address</p>}
+                <button type="submit">Continue</button>
+            </label>
         </form> 
     )
 }
 
-export const CollectEmail
+export default CollectEmail
